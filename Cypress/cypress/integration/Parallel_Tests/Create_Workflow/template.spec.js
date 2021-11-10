@@ -52,9 +52,6 @@ describe("Testing the workflow creation wizard using Templates", () => {
 		cy.get("[data-cy=FinishModal]").should("be.visible");
 		cy.get("[data-cy=WorkflowName]").then(($name) => {
 			workflowName = $name.text();
-			cy.get('@workflowNamespace').then((workflowNamespace) => {
-				cy.validateWorkflowExistence(workflowName, workflowNamespace);
-			});
 			return;
 		});
 		cy.get("[data-cy=GoToWorkflowButton]").click();
